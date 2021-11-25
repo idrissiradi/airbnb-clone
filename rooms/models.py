@@ -39,6 +39,7 @@ class HouseRule(AbstractItem):
 
 
 class Photo(core_models.TimeStampedModel):
+
     caption = models.CharField(max_length=80)
     file = models.ImageField(upload_to="room_photos")
     room = models.ForeignKey("Room", on_delete=models.CASCADE, related_name="photos")
@@ -48,6 +49,7 @@ class Photo(core_models.TimeStampedModel):
 
 
 class Room(core_models.TimeStampedModel):
+
     name = models.CharField(max_length=140)
     description = models.TextField()
     country = CountryField()
