@@ -43,4 +43,8 @@ class CustomAdmin(UserAdmin):
         "login_method",
     )
 
-    list_filter = UserAdmin.list_filter + ("superhost",)
+    list_filter = UserAdmin.list_filter + (
+        "superhost",
+        "login_method",
+        "email_verified",
+    )
