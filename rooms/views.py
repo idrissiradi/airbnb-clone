@@ -8,8 +8,8 @@ from . import models, forms
 
 class HomeView(ListView):
     model = models.Room
-    paginate_by = 10
-    paginate_orphans = 5
+    paginate_by = 12
+    paginate_orphans = 4
     ordering = "created"
     context_object_name = "rooms"
 
