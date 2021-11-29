@@ -1,22 +1,35 @@
-<div class="w-1/4 mb-10 px-2">
-    <div class=" w-full h-64 bg-cover bg-center rounded-lg mb-2" style="background-image: url({{room.first_photo}});">
-    </div>
-    <div class="flex justify-between">
-        <div>
-            {% if room.host.superhost %}
-            <span
-                class=" uppercase font-medium text-xs text-black border border-black rounded py-px px-1">superhost</span>
-            {% endif %}
-            <span class=" text-sm text-gray-600 ">
-                {{room.city}}
+<div class="w-1/4 mb-10 px-2 overflow-hidden">
+    <a href="{% url 'rooms:detail' room.pk %}">
+        <div
+            class="w-full h-64 bg-cover bg-center rounded-lg mb-2"
+            style="background-image: url({{room.first_photo}});"
+        ></div>
+        <div class="flex justify-between mb-2 truncate">
+            <div class="w-4/5 overflow-hidden flex">
+                {% if room.host.superhost %}
+                <span
+                    class="
+                        mr-2
+                        uppercase
+                        font-medium
+                        text-xs text-black
+                        border border-black
+                        rounded
+                        py-px
+                        px-1
+                    "
+                    >superhost</span
+                >
+                {% endif %}
+                <span class="text-sm text-gray-600 truncate block">
+                    {{room.city}}, {{room.country.name}}
+                </span>
+            </div>
+            <span class="text-sm flex items-center">
+                <i class="fas fa-star text-red-500 text-xs mr-1"></i>
+                {{room.total_review}}
             </span>
         </div>
-        <span class=" text-sm flex items-center">
-            <i class="fas fa-star text-red-500 text-xs mr-1"></i>{{room.total_review}}
-        </span>
-    </div>
-    <!-- <a href="{% url 'rooms:detail' room.pk %}">
-        <img src="{{room.first_photo}}" alt="">
-        {{room.name}} / ${{room.price}}
-    </a> -->
+        <span class="text-black truncate block w-11/12"> {{room.name}} </span>
+    </a>
 </div>
