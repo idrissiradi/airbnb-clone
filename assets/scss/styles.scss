@@ -14,6 +14,13 @@
 
 .btn {
     @apply text-lg text-center rounded-sm py-5 font-light w-full;
+    &.btn--small {
+        @apply py-3 rounded-lg;
+    }
+}
+
+.btn-link {
+    @apply text-lg text-center py-3 rounded-lg font-light w-full text-white bg-red-500;
 }
 
 input {
@@ -28,6 +35,41 @@ form {
                 @apply bg-red-200 border-gray-600 focus:border-gray-600;
             }
         }
+    }
+}
+
+@keyframes messageFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    5% {
+        opacity: 1;
+        transform: translateY(50px);
+    }
+    95% {
+        opacity: 1;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+}
+
+.message {
+    animation: messageFadeIn 5s ease-in-out forwards;
+    &.info {
+        @apply bg-blue-500;
+    }
+    &.success {
+        @apply bg-green-500;
+    }
+    &.warning {
+        @apply bg-yellow-400;
+    }
+    &.error {
+        @apply bg-red-600;
     }
 }
 

@@ -6,14 +6,15 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link
-            rel="stylesheet"
+        rel="stylesheet"
             href="https://use.fontawesome.com/releases/v5.11.2/css/all.css"
         />
         <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
         <title>{% block page_title %}{% endblock page_title %} | Nbnb</title>
     </head>
-
+    
     <body class="text-gray-800 mt-24 font-light">
+        {% include "partials/messages.html" %}
         <header
             class="
                 container
@@ -63,5 +64,6 @@
         {% block content %} {% endblock content %}
         
         {% include "partials/footer.html" %}
+
     </body>
 </html>
