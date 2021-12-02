@@ -7,21 +7,14 @@
 {% block search-bar %} {% endblock search-bar %}
 
 {% block content %}
-<div class="
-            container
-            mx-auto
-            my-10
-            flex flex-col
-            items-center
-            border
-            p-6
-            border-gray-400
-            lg:w-5/12
-            md:w-1/2
-            xl:w-1/4
-        ">
+<div class=" container mx-auto my-10 flex flex-col items-center border p-6 border-gray-400 lg:w-5/12 md:w-1/2 xl:w-1/4">
 
     {% include "mixins/room/room_form.html" with form=form cta="Update room" %}
+    <div class="mt-5">
+        <a href="{% url 'rooms:photos' room.pk %}" class=" text-blue-400 font-medium">
+            Edit Photos
+        </a>
+    </div>
 
 </div>
 {% endblock content %}
