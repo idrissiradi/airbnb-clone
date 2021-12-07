@@ -7,6 +7,7 @@ from django.urls import reverse
 
 from . import models
 from rooms import models as room_models
+from reviews import forms as review_forms
 
 
 class CreateError(Exception):
@@ -43,8 +44,10 @@ class ReservationDetailView(View):
         ):
             raise Http404()
 
+        form = review_forms.CreateReviewForm()
         context = {
             "reservation": reservation,
+            "form": form,
         }
         return render(self.request, "reservations/detail.html", context)
 
