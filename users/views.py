@@ -9,6 +9,7 @@ from django.core.files.base import ContentFile
 from django.contrib import messages
 from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 
 from . import forms, models, mixins
 
@@ -63,9 +64,9 @@ def complete_verification(request, key):
         user.email_verified = True
         user.email_secret = ""
         user.save()
-        # to do : add success message
+        messages.success(request, "your account verified")
     except models.User.DoesNotExist:
-        # to do : add error message
+        messages.error(request, "your account not verified")
         pass
     return redirect(reverse("core:home"))
 
