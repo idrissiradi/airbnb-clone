@@ -65,6 +65,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "django.middleware.locale.LocaleMiddleware",
 ]
 
 ROOT_URLCONF = "config.urls"
@@ -151,6 +152,7 @@ MEDIA_ROOT = BASE_DIR / "uploads"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
+# AUTH
 AUTH_USER_MODEL = "users.User"
 
 # Email Configuration
@@ -164,3 +166,8 @@ EMAIL_USE_TLS = True
 
 # Login Url
 LOGIN_URL = "/users/login/"
+
+# Locale
+LOCALE_PATHS = [
+    BASE_DIR / "locale",
+]
