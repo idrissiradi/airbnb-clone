@@ -1,14 +1,12 @@
+{% load i18n %}
 <div class="w-1/4 mb-10 px-2 overflow-hidden">
     <a href="{% url 'rooms:detail' room.pk %}">
-        <div
-            class="w-full h-64 bg-cover bg-center rounded-lg mb-2"
-            style="background-image: url({{room.first_photo}});"
-        ></div>
+        <div class="w-full h-64 bg-cover bg-center rounded-lg mb-2"
+            style="background-image: url({{room.first_photo}});"></div>
         <div class="flex justify-between mb-2 truncate">
             <div class="w-4/5 overflow-hidden flex">
                 {% if room.host.superhost %}
-                <span
-                    class="
+                <span class="
                         mr-2
                         uppercase
                         font-medium
@@ -17,9 +15,7 @@
                         rounded
                         py-px
                         px-1
-                    "
-                    >superhost</span
-                >
+                    ">{% trans 'superhost' %}</span>
                 {% endif %}
                 <span class="text-sm text-gray-600 truncate block">
                     {{room.city}}, {{room.country.name}}

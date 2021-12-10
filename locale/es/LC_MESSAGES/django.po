@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-08 13:37+0100\n"
+"POT-Creation-Date: 2021-12-10 15:59+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,6 +22,10 @@ msgstr ""
 msgid "Search by city"
 msgstr "Buscar por Ciudad"
 
+#: templates/mixins/room_card.html:18 users/models.py:72
+msgid "superhost"
+msgstr "Super anfitrión"
+
 #: templates/partials/footer.html:4
 msgid "Please don't copy us."
 msgstr "Por favor no nos copies."
@@ -29,3 +33,80 @@ msgstr "Por favor no nos copies."
 #: templates/partials/footer.html:5
 msgid "All rights reserved."
 msgstr "Todos los derechos reservados."
+
+#: templates/partials/nav.html:7
+msgid "Stop hosting"
+msgstr "Dejar de hospedar"
+
+#: templates/partials/nav.html:9
+msgid "Start hosting"
+msgstr "Comience a hospedar"
+
+#: templates/partials/nav.html:14
+msgid "Create room"
+msgstr "Crear espacio"
+
+#: templates/partials/nav.html:16
+msgid "Profile"
+msgstr "Perfil"
+
+#: templates/partials/nav.html:17
+msgid "Log Out"
+msgstr "Cerrar sesión"
+
+#: templates/partials/nav.html:19
+msgid "Log In"
+msgstr "Iniciar sesión"
+
+#: templates/partials/nav.html:20
+msgid "Sign Up"
+msgstr "Inscribirse"
+
+#: templates/rooms/room_list.html:35
+#, python-format
+msgid "Page %(current_page)s of %(total_pages)s"
+msgstr "Pàgina %(current_page)s de %(total_pages)s"
+
+#: users/models.py:21
+msgid "Male"
+msgstr "Hombre"
+
+#: users/models.py:22
+msgid "Female"
+msgstr "Mujer"
+
+#: users/models.py:23
+msgid "Other"
+msgstr "Otro"
+
+#: users/models.py:30
+msgid "English"
+msgstr "Inglés"
+
+#: users/models.py:31
+msgid "Korean"
+msgstr "Coreano"
+
+#: users/models.py:54
+msgid "gender"
+msgstr "género"
+
+#: users/models.py:56
+msgid "bio"
+msgstr "biografía"
+
+#: users/models.py:57
+msgid "birthday"
+msgstr "cumpleaños"
+
+#: users/models.py:59
+msgid "language"
+msgstr "lenguage"
+
+#: users/models.py:66
+msgid "currency"
+msgstr "divisa"
+
+#: users/models.py:87
+msgid "Verify Airbnb Account"
+msgstr "Verificar cuenta de Airbnb"
