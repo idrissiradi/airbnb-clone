@@ -13,6 +13,7 @@
     {% if request.session.is_hosting %}
     <li class="nav-link"><a href="{% url 'rooms:create' %}">{% trans 'Create room' %}</a></li>
     {% endif %}
+    <li class="nav-link"><a href="{% url 'lists:see-favs' %}">{% trans 'Favs' %} ({{user.lists.rooms.count}})</a></li>
     <li class="nav-link"><a href="{{user.get_absolute_url}}">{% trans 'Profile' %}</a></li>
     <li class="nav-link"><a href="{% url 'users:logout' %}">{% trans 'Log Out' %}</a></li>
     {% else %}

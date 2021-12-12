@@ -7,7 +7,7 @@ from rooms.models import Room
 
 class List(core_models.TimeStampedModel):
     name = models.CharField(max_length=80)
-    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="lists")
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name="lists")
     rooms = models.ManyToManyField(Room, blank=True, related_name="lists")
 
     def __str__(self):

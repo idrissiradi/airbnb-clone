@@ -43,7 +43,7 @@ Reservation {{reservation.check_in}}
                 <span class="font-medium mb-px">
                     Contact Your Airbnb Host
                 </span>
-                <a href="#" class="font-medium text-teal-500">
+                <a href="{% url 'conversations:go' reservation.room.host.pk reservation.guest.pk  %}" class="font-medium text-teal-500">
                     Send a Message
                 </a>
             </div>

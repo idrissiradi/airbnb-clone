@@ -8,6 +8,8 @@ from django.template.loader import render_to_string
 from django.urls import reverse
 from django.utils.translation import gettext_lazy as _
 
+from core.managers import CustomModelManager
+
 
 class User(AbstractUser):
 
@@ -75,6 +77,7 @@ class User(AbstractUser):
     login_method = models.CharField(
         max_length=50, choices=LOGIN_CHOICES, default=LOGIN_EMAIL
     )
+    objects = CustomModelManager()
 
     def verify_email(self):
         if self.email_verified is False:
