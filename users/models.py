@@ -8,7 +8,7 @@ from django.template.loader import render_to_string
 from django.urls import reverse
 from django.utils.translation import gettext_lazy as _
 
-from core.managers import CustomModelManager
+from core import managers as core_managers
 
 
 class User(AbstractUser):
@@ -77,7 +77,10 @@ class User(AbstractUser):
     login_method = models.CharField(
         max_length=50, choices=LOGIN_CHOICES, default=LOGIN_EMAIL
     )
-    objects = CustomModelManager()
+    objects = core_managers.CustomUserManager()
+
+    def get_absolute_url(self):
+        return reverse("users:profile", kwargs={"pk": self.pk})
 
     def verify_email(self):
         if self.email_verified is False:
@@ -96,6 +99,3 @@ class User(AbstractUser):
             )
             self.save()
         return
-
-    def get_absolute_url(self):
-        return reverse("users:profile", kwargs={"pk": self.pk})
